@@ -71,7 +71,7 @@ class Client implements ClientInterface
         }
 
         $messageFactory = new GuzzleMessageFactory();
-        $socketClient = new SocketHttpClient($messageFactory, null, $socketClientOptions);
+        $socketClient = new SocketHttpClient($messageFactory, [], $socketClientOptions);
         $host = preg_match(
           '/unix:\/\//',
           $socketClientOptions['remote_socket']
