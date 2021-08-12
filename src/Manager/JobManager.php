@@ -240,10 +240,14 @@ class JobManager extends ManagerAbstract
         $metaLimit = $this->buildProperty('limit', $limit, true);
         $metaMyJobs = $this->buildProperty('my-jobs', $myJobs, true);
 
-        if ($whichJobs == 'completed') {
-            $metaWhichJobs = $this->buildProperty('which-jobs', $whichJobs, true);
-        } else {
-            $metaWhichJobs = '';
+        switch ($whichJobs) {
+            case 'completed':
+            case 'all':
+            case 'not-completed':
+                $metaWhichJobs = $this->buildProperty('which-jobs', $whichJobs, true);
+                break;
+            default:
+                $metaWhichJobs = '';
         }
 
         $content = $this->getVersion() // 1.1  | version-number
