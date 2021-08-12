@@ -8,19 +8,20 @@ use Http\Client\Common\Plugin\ContentLengthPlugin;
 use Http\Client\Common\Plugin\DecoderPlugin;
 use Http\Client\Common\Plugin\ErrorPlugin;
 use Http\Client\Common\PluginClient;
-use Http\Client\HttpClient;
 use Http\Client\Socket\Client as SocketHttpClient;
 use Http\Message\MessageFactory\GuzzleMessageFactory;
 use Psr\Http\Message\RequestInterface;
 use Smalot\Cups\CupsException;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Client\ClientInterface;
 
 /**
  * Class Client
  *
  * @package Smalot\Cups\Transport
  */
-class Client implements HttpClient
+class Client implements ClientInterface
 {
 
     const SOCKET_URL = 'unix:///var/run/cups/cups.sock';
@@ -30,7 +31,7 @@ class Client implements HttpClient
     const AUTHTYPE_DIGEST = 'digest';
 
     /**
-     * @var HttpClient
+     * @var ClientInterface
      */
     protected $httpClient;
 
@@ -71,7 +72,7 @@ class Client implements HttpClient
         }
 
         $messageFactory = new GuzzleMessageFactory();
-        $socketClient = new SocketHttpClient($messageFactory, $socketClientOptions);
+        $socketClient = new SocketHttpClient($messageFactory, null, $socketClientOptions);
         $host = preg_match(
           '/unix:\/\//',
           $socketClientOptions['remote_socket']
