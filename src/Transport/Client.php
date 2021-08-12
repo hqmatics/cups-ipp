@@ -13,7 +13,6 @@ use Http\Message\MessageFactory\GuzzleMessageFactory;
 use Psr\Http\Message\RequestInterface;
 use Smalot\Cups\CupsException;
 use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Client\ClientInterface;
 
 /**
