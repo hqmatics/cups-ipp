@@ -275,7 +275,7 @@ class Job implements JobInterface
           'type' => self::CONTENT_FILE,
           'name' => $name,
           'mimeType' => $mimeType,
-          'filename' => $filename,
+          'binary' => file_get_contents($filename),
         ];
 
         return $this;
