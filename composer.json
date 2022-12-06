@@ -1,16 +1,16 @@
 {
-    "name": "julianosorio078/cups-ipp",
+    "name": "hqmatics/cups-ipp",
     "description": "CUPS Implementation of IPP - PHP Client API",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Julian-Andres",
-            "email": "julian.osorio078@gmail.com"
+            "name": "Tjerk Hacquebord",
+            "email": "tjerk@hqmatics.nl"
         }
     ],
     "require": {
-        "php": ">=5.6",
+        "php": ">=8.0",
         "php-http/socket-client": "^2.0",
         "php-http/client-common": "^2.1",
         "php-http/message": "^1.0",
