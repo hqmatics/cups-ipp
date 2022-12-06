@@ -1,7 +1,7 @@
 {
     "name": "hqmatics/cups-ipp",
     "description": "CUPS Implementation of IPP - PHP Client API",
-    "type": "library",
+    "type": "github",
     "license": "MIT",
     "authors": [
         {
