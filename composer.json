@@ -15,7 +15,8 @@
         "php-http/client-common": "^2.6",
         "php-http/message": "^1.13",
         "guzzlehttp/psr7": "^1.9",
-        "symfony/yaml": "^4.4||^5.4"
+        "symfony/yaml": "^4.4||^5.4",
+        "php-http/message-factory": "^1.1"
     },
     "require-dev": {
         "symfony/debug": "*",
